@@ -1,0 +1,32 @@
+def anagram_check_1(s1,s2):
+    s1=s1.replace(" ","")
+    s2=s2.replace(" ","")
+    s1=sorted(s1)
+    s2=sorted(s2)
+    if s1==s2:
+        print ("yes,it is an anagram")
+        return True
+    else:
+        print("not an anagram")
+anagram_check_1("public relations","crap built on lies")
+def anagram_check_2(s1,s2) :
+#more manual way to do the things
+    s1=s1.replace(" ","")
+    s2=s2.replace(" ","")
+    count={}
+    for i in s1:
+        if i in count:
+            count[i]=+1
+        else:
+            count[i]=1
+    for i in s2:
+        if i in count:
+            count[i]=-1
+        else:
+            count[i]=1
+    for k in count:
+        if count[k]!=0:
+            print("not an anagram")
+            return False
+    return True    
+anagram_check_2("as","asdaw")
