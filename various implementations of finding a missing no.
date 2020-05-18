@@ -1,0 +1,39 @@
+def finder1(arr1,arr2):
+    for i in arr1:
+        if i not in arr2:
+            print(i)
+        else:
+            print("none missing")
+#finder([1,2,3],[2,1])            
+def finder2(arr1,arr2):
+    arr1=arr1.sorted()
+    arr2=arr2.sorted()
+    x=zip(arr1,arr2)
+    for i,j in x:
+        if(i!=j):
+            print("{} is missing".format(i))
+            return i
+    return -1        
+#finder2([1,2,3],[2,1])
+def finder3(arr1,arr2):
+    import collections
+    d=collections.defaultdict(int)
+    for num in arr2:
+        d[num]+=1
+    for i in arr1:
+        if d[i]==0:
+            print (i)
+            return i
+        else:
+            d[i]-=1
+    return -1        
+#finder3([1,2,3],[2,1]
+def finder4(arr1,arr2):
+    s1=0
+    s2=0
+    for i in arr1:
+        s1+=i
+    for i in arr2:
+        s2+=i
+    print(s1-s2) 
+#finder4([1,2,3],[2,1])
