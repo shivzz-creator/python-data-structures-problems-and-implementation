@@ -1,0 +1,11 @@
+def maxcontsum(arr):
+    if len(arr)==0:
+        return 0
+    maxsum=arr[0]
+    currentsum=maxsum
+    for number in arr[1:]:
+        currentsum=max(currentsum+number,number)
+        maxsum=max(currentsum,maxsum)
+    return maxsum
+x=maxcontsum([-3,-2,3,1,-3])  
+print(x)
