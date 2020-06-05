@@ -1,0 +1,18 @@
+#this is first try implementation using stack type data structre
+def sentence_reversal(sentence):
+    word=""
+    x=[]
+    for i in sentence:
+        if i==" ":
+            x.append(word)
+            word=""
+        else:
+            word=word+i
+    x.append(word)  
+    print(x)
+    rev_sentence=""
+    while(len(x)!=0):
+        word=x.pop()
+        rev_sentence+= " "+word;
+    print(rev_sentence)    
+sentence_reversal("my name is shivansh")    
